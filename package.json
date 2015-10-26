@@ -1,0 +1,38 @@
+{
+  "name": "webpack-structure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "browsersync": "rm -rf build/*; cp -R app/assets/ build/assets/; rm -rf build/assets/js/; webpack --watch",
+    "deploy": "rm -rf dist/*; webpack",
+    "dev": "rm -rf build/*; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
+    "tinypng": "tinypng -r dist/"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer-loader": "^3.1.0",
+    "babel-core": "^5.8.25",
+    "babel-loader": "^5.3.2",
+    "browser-sync": "^2.9.8",
+    "browser-sync-webpack-plugin": "^1.0.0",
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "file-loader": "^0.8.4",
+    "html-webpack-plugin": "^1.6.1",
+    "node-sass": "^3.3.3",
+    "react-hot-loader": "^1.3.0",
+    "sass-loader": "^3.0.0",
+    "style-loader": "^0.12.4",
+    "tinypng-tool": "0.0.7",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.0",
+    "webpack-merge": "^0.2.0"
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
+  }
+}
