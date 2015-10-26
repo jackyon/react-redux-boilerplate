@@ -57,25 +57,22 @@ To do:
 	<li>More usful plugins will include in...</li>
 </ol>
 
+
+
 <h2>Hints:</h2>
-<ol>
-	<li>
-		why not using webpack imagein plugin, cause that plugin doesn't save so much sizes. if you have better solution plz contact me.
+why not using webpack imagein plugin, cause that plugin doesn't save so much sizes. if you have better solution plz contact me.
 
-		By default " npm run tinypng" will replace the original png files, there more useage:
-		```
-		tinypng [options] [image.png|*.png]
-		  -k, --api-key       Set default TinyPNG API key.
-		  -r, --allow-rewrite Rewrite the original files with compressed data.
-		  -n, --allow-nonpng  Allow you to compress files without .png extention.
-		  -p, --postfix       Postfix for compressed files when rewriting disabled.
-		  -h, --help          This message.
-		  -v, --version       Show version.
-		```
-		you can custom the scripts in package.json file.
-	</li>
-</ol>
-
+By default " npm run tinypng" will replace the original png files, there more useage:
+```
+tinypng [options] [image.png|*.png]
+  -k, --api-key       Set default TinyPNG API key.
+  -r, --allow-rewrite Rewrite the original files with compressed data.
+  -n, --allow-nonpng  Allow you to compress files without .png extention.
+  -p, --postfix       Postfix for compressed files when rewriting disabled.
+  -h, --help          This message.
+  -v, --version       Show version.
+```
+you can custom the scripts in package.json file.
 
 
 
