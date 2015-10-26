@@ -60,7 +60,7 @@ var TARGET = process.env.npm_lifecycle_event;
  * ============================================================ */
 var common = {
 	entry: {
-    	app: ['jquery', 'app']
+    	app: ['react','jquery', 'app']
     	// app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
@@ -103,7 +103,7 @@ var common = {
 		new HtmlWebpackPlugin({
 			title: 'index page',
 			template: path.resolve(ROOT_PATH, 'app/tmpl/index.html'),
-			inject: 'head',
+			inject: 'body',
 			filename: 'index.html', //change it to '../index.html' if you want to test on browserSync model.
 			hash: false,
 			chunks: ['app']
@@ -122,7 +122,7 @@ if(TARGET === 'dev') {
     	output: {
 	        path: path.resolve(BUILD_PATH)
 	    },
-    	// devtool: "source-map",
+    	devtool: "source-map",
 	    module: {
 	    	loaders: [
 				//jsx
@@ -134,8 +134,8 @@ if(TARGET === 'dev') {
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	// loader: 'style!css?sourceMap!sass?sourceMap!autoprefixer-loader',
-			    	loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
+			    	loader: 'style!css?sourceMap!sass?sourceMap!autoprefixer-loader',
+			    	// loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
 			    	include: APP_PATH
 			    }
 	    	]
