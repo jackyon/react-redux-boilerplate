@@ -1,7 +1,7 @@
-import './reset.scss';
+import './Reset.scss';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from '../header/header.jsx';
+import Header from '../Header/Header.jsx';
 
 ReactDOM.render(<Header />, document.getElementById('header'));

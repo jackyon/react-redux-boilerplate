@@ -70,7 +70,7 @@ var common = {
 		loaders: [
 			//jsx
 			{
-				test: /\.jsx?$/,
+				test: /\.(jsx|js)?$/,
       			loader: 'babel',
       			include: APP_PATH
 			},
@@ -91,7 +91,7 @@ var common = {
     resolve: {
 		alias: {
 			jquery: path.resolve(ROOT_PATH, 'app/assets/js/libs/jquery/jquery.min.js'),
-			app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
+			app: path.resolve(ROOT_PATH, 'app/components/App/App.js')
 		}
     },
     plugins: [
