@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browsersync": "rm -rf build/*; cp -R app/assets/ build/assets/; rm -rf build/assets/js/; webpack --watch",
+    "browsersync": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/; rm -rf build/assets/js/; webpack --watch",
     "deploy": "rm -rf dist/*; webpack",
-    "dev": "rm -rf build/*; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
+    "dev": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
     "tinypng": "tinypng -r dist/"
   },
   "author": "",
