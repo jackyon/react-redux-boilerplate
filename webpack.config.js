@@ -80,6 +80,11 @@ var common = {
       			loader: 'style!css',
       			include: APP_PATH
 			},
+			//font
+			{
+			    test   : /\.woff|\.woff2|\.svg|.eot|\.ttf/,
+			    loader : 'url?prefix=font/&limit=10000'
+			},
 		    //url loader
 		    {
 		    	test: /\.(png|jpg)$/,
@@ -120,7 +125,8 @@ var common = {
 if(TARGET === 'dev') {
 	module.exports = merge(common, {
     	output: {
-	        path: path.resolve(BUILD_PATH)
+	        path: path.resolve(BUILD_PATH),
+  			publicPath: 'http://0.0.0.0:8080/'
 	    },
     	devtool: "source-map",
 	    module: {
