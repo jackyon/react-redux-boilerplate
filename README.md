@@ -6,6 +6,7 @@ Directory Layout:
 ├── /app/                       # The source code of the application
 │   ├── /assets/            	# public js/images/fonts
 │   ├── /components/            # components/pages
+│   ├── /public/            	# Static files which are copied into the /dist/ root folder
 │   ├── /tmpl/               	# Static content (plain HTML or Markdown)
 │
 ├── /build/                     # The folder for compiled output

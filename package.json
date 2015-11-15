@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "browsersync": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/; rm -rf build/assets/js/; webpack --watch",
-    "deploy": "rm -rf dist/*; webpack",
-    "dev": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
+    "common": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/;",
+    "browsersync": "npm run common; rm -rf build/assets/js/; webpack --watch",
+    "deploy": "rm -rf dist/*; cp -R app/public/ dist/; webpack",
+    "dev": "npm run common; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
     "tinypng": "tinypng -r dist/"
   },
   "author": "",
@@ -33,6 +34,7 @@
     "webpack-merge": "^0.2.0"
   },
   "dependencies": {
+    "normalize.css": "^3.0.3",
     "react": "^0.14.0",
     "react-dom": "^0.14.0"
   }

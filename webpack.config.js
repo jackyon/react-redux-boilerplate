@@ -196,7 +196,6 @@ if (TARGET === 'deploy') {
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	// loader: 'style!css!sass!autoprefixer-loader',
 			    	loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
 			    	include: APP_PATH
 			    }
