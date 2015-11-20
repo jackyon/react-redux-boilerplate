@@ -1,13 +1,17 @@
 <h1>Webpack base structure with reactjs</h1>
-> Containing modern web development tools such as Webpack, React Hot Loader, Babel, sass, autoprefixer, BrowserSync, Tinypng...
+> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Redux, Babel, sass, autoprefixer, BrowserSync, Tinypng...
 
 Directory Layout:
 ```
 ├── /app/                       # The source code of the application
-│   ├── /assets/            	# public js/images/fonts
-│   ├── /components/            # components/pages
+│   ├── /actions/            	# Redux action creators
+│   ├── /assets/            	# Public js/images/fonts
+│   ├── /components/            # Components/pages
+│   ├── /constants/            	# Constants (action types etc.)
 │   ├── /public/            	# Static files which are copied into the /dist/ root folder
+│   ├── /reducers/            	# Redux reducers
 │   ├── /tmpl/               	# Static content (plain HTML or Markdown)
+│   ├── /utils/            		# Generic utilities
 │
 ├── /build/                     # The folder for compiled output
 ├── /dist/                      # The folder for deploy output
