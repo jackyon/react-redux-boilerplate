@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/constants.js'
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes.js'
 const { SHOW_ALL } = VisibilityFilters
 
 export default function example(state = [], action) {

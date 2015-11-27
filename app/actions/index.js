@@ -1,4 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER  } from '../constants/constants.js'
+import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER  } from '../constants/ActionTypes.js'
 
 export function addTodo(text) {
   return { type: ADD_TODO, text }

@@ -60,7 +60,7 @@ var TARGET = process.env.npm_lifecycle_event;
  * ============================================================ */
 var common = {
 	entry: {
-    	app: ['react','jquery', 'app']
+    	app: ['react','jquery','index']
     	// app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
@@ -96,7 +96,7 @@ var common = {
     resolve: {
 		alias: {
 			jquery: path.resolve(ROOT_PATH, 'app/assets/js/libs/jquery/jquery.min.js'),
-			app: path.resolve(ROOT_PATH, 'app/components/App/App.js')
+			index: path.resolve(ROOT_PATH, 'app/index.js')
 		}
     },
     plugins: [
