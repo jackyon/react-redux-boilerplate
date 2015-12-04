@@ -1,4 +1,4 @@
-<h1>Webpack base structure with reactjs</h1>
+<h1>react-redux-boilerplate</h1>
 > Containing modern web development tools such as Webpack, React Hot Loader, React Router, Redux, Babel, sass, autoprefixer, BrowserSync, Tinypng...
 
 Directory Layout:
