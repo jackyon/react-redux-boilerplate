@@ -7,7 +7,7 @@
     "common": "rm -rf build/*; mkdir build; cp -R app/assets/ build/assets/;",
     "browsersync": "npm run common; rm -rf build/assets/js/; webpack --watch",
     "deploy": "rm -rf dist/*; cp -R app/public/ dist/; webpack",
-    "dev": "npm run common; webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
+    "dev": "npm run common;webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
     "tinypng": "tinypng -r dist/"
   },
   "author": "",
