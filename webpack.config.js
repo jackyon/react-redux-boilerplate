@@ -94,7 +94,6 @@ var common = {
     },
     resolve: {
 		alias: {
-			jquery: path.resolve(ROOT_PATH, 'app/assets/js/libs/jquery/jquery.min.js'),
 			index: path.resolve(ROOT_PATH, 'app/index.js')
 		}
     },
@@ -139,7 +138,6 @@ if(TARGET === 'dev') {
 				{
 			    	test: /\.scss$/,
 			    	loader: 'style!css?sourceMap!sass?sourceMap!autoprefixer-loader',
-			    	// loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
 			    	include: APP_PATH
 			    }
 	    	]
@@ -200,7 +198,8 @@ if (TARGET === 'deploy') {
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
+			    	// loader: ExtractTextPlugin.extract('style!css!sass!autoprefixer-loader'),
+			    	loader: ExtractTextPlugin.extract('style-loader', 'css!sass!autoprefixer-loader'),
 			    	include: APP_PATH
 			    }
 	    	]

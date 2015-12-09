@@ -1,24 +1,23 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { Provider } from 'react-redux'
-import { Router, Route, IndexRoute } from 'react-router'
-import { createHistory } from 'history'
-import { syncReduxAndRouter, routeReducer } from 'redux-simple-router'
-import App from './containers/App'
+import { Router, Redirect } from 'react-router'
+import { createHashHistory } from 'history'
+import { syncReduxAndRouter } from 'redux-simple-router'
 import configureStore from './store/configureStore'
+import routes from './routes.js'
 
 const store = configureStore()
-const history = createHistory()
+const history = createHashHistory()
 
 syncReduxAndRouter(history, store)
 
 render(
 	<Provider store={store}>
 		<Router history={history}>
-			<Route path="/" component={App}>
-				<IndexRoute component={App}/>
-			</Route>
+			<Redirect from="/" to="home" />
+			{routes}
 		</Router>
 	</Provider>,
-	document.getElementById('example')
+	document.getElementById('app')
 )

@@ -5,15 +5,16 @@ Directory Layout:
 ```
 ├── /app/                       # The source code of the application
 │   ├── /actions/            	# Redux action creators
-│   ├── /assets/            	# Public css/js/images/fonts
 │   ├── /components/            # Components/pages
 │   ├── /constants/            	# Constants (action types etc.)
-│   ├── /containers/            # Components that provide context (e.g. Redux Provider)
+│   ├── /containers/            # Containers
 │   ├── /public/            	# Static files which are copied into the /dist/ root folder
 │   ├── /reducers/            	# Redux reducers
+│   ├── /store/            	    # Redux store configuration
 │   ├── /tmpl/               	# Static content (plain HTML or Markdown)
 │   ├── /utils/            		# Generic utilities
 │   ├── index.js            	# Application bootstrap and rendering
+│   ├── routes.js            	# Application route definitions
 │
 ├── /build/                     # The folder for compiled output
 ├── /dist/                      # The folder for deploy output
