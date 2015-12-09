@@ -86,8 +86,8 @@ var common = {
 			},
 		    //url loader
 		    {
-		    	test: /\.(png|jpg)$/,
-		    	loader: 'url?limit=25000',
+		    	test: /\.(png|jpg|jpeg|gif)$/,
+		    	loader: 'url?limit=10000',
 				include: APP_PATH
 		    }
 		]
@@ -107,7 +107,7 @@ var common = {
 			title: 'index page',
 			template: path.resolve(ROOT_PATH, 'app/tmpl/index.html'),
 			inject: 'body',
-			filename: 'index.html', //change it to '../index.html' if you want to test on browserSync model.
+			filename: '../index.html', //change it to '../index.html' if you want to test on browserSync model.
 			hash: false,
 			chunks: ['app']
 		}),
@@ -137,7 +137,7 @@ if(TARGET === 'dev') {
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: 'style!css?sourceMap!sass?sourceMap!autoprefixer-loader',
+			    	loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap',
 			    	include: APP_PATH
 			    }
 	    	]
@@ -164,21 +164,25 @@ if(TARGET === 'browsersync') {
 	        path: path.resolve(ROOT_PATH, 'build/assets/'),
 	        publicPath: 'assets/'
 	    },
-    	// devtool: "source-map",
+    	devtool: "source-map",
 	    module: {
 	    	loaders: [
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	// loader: 'style!css?sourceMap!sass?sourceMap!autoprefixer-loader',
-			    	loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer-loader"),
+			    	loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap',
+			    	// loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
 			    	include: APP_PATH
 			    }
 	    	]
 	    },
 	    plugins: [
 			CssExtractPlugin,
-	    	BrowserSyncPlugin
+	    	BrowserSyncPlugin,
+	    	new webpack.DefinePlugin({
+			  'process.env': {NODE_ENV: '"production"'},
+			  '__DEV__': false
+			})
     	]
   	});
 }
@@ -198,8 +202,7 @@ if (TARGET === 'deploy') {
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	// loader: ExtractTextPlugin.extract('style!css!sass!autoprefixer-loader'),
-			    	loader: ExtractTextPlugin.extract('style-loader', 'css!sass!autoprefixer-loader'),
+			    	loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
 			    	include: APP_PATH
 			    }
 	    	]

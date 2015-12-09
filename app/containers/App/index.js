@@ -1,4 +1,4 @@
-import './styles/App.scss';
+import './styles/app.scss';
 import React, { Component } from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -18,8 +18,6 @@ class App extends Component {
 		)
 	}
 }
-
-
 
 const mapStateToProps = (state) => {
 	return {

@@ -3,8 +3,9 @@ import React, { Component } from 'react'
 class Home extends Component {
 	render() {
 		return (
-			
-			<p>Home Page</p>
+			<div>
+				<p>Home Page</p>
+			</div>
 		)
 	}
 }
