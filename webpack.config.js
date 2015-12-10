@@ -107,7 +107,7 @@ var common = {
 			title: 'index page',
 			template: path.resolve(ROOT_PATH, 'app/tmpl/index.html'),
 			inject: 'body',
-			filename: '../index.html', //change it to '../index.html' if you want to test on browserSync model.
+			filename: '../index.html',
 			hash: false,
 			chunks: ['app']
 		}),
@@ -122,7 +122,7 @@ var common = {
 if(TARGET === 'dev') {
 	module.exports = merge(common, {
     	output: {
-	        path: path.resolve(BUILD_PATH),
+	        path: path.resolve(BUILD_PATH, 'build/assets/'),
   			publicPath: 'http://127.0.0.1:8080/'
 	    },
     	devtool: "source-map",
