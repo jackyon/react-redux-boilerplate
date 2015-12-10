@@ -10,7 +10,7 @@
     "dev": "npm run common;webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
     "tinypng": "tinypng -r dist/"
   },
-  "author": "",
+  "author": "jackyon",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer-loader": "^3.1.0",
