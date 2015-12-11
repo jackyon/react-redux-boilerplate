@@ -1,5 +1,5 @@
 <h1>react-redux-boilerplate</h1>
-> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Redux, Babel, sass, autoprefixer, BrowserSync, Tinypng...
+> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Redux, Redux simple router,Babel, sass, autoprefixer, BrowserSync, Tinypng...
 
 Directory Layout:
 ```
@@ -55,22 +55,14 @@ $ npm run tinypng
 <h5>JPEG:</h5>
 ```
 fot now, I'm still using jpegmini, this is the best tools to compress the jpeg images that I discovered so far.
-the jpegmini app is quite simple to optimize the photos, just simple drag. But I will consider to integrate this super tool into webpack. Still researching...
+even though the jpegmini app is so simple to use it(just simple drag&drop), but I will consider to integrate this super tool into webpack. Still researching...
 ```
-
-
-To do:
-<ol>
-	<li>Thinking a smart way to deploy the files to remote server without using gulp/grunt.</li>
-	<li>More usful plugins will include in...</li>
-</ol>
-
 
 
 <h2>Hints:</h2>
 why not using webpack imagein plugin, cause that plugin doesn't save so much sizes. if you have better solution plz contact me.
 
-By default " npm run tinypng" will replace the original png files, there more useage:
+By default "npm run tinypng" will replace the original png files, there more usage:
 ```
 tinypng [options] [image.png|*.png]
   -k, --api-key       Set default TinyPNG API key.
