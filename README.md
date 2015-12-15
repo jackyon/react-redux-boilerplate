@@ -1,20 +1,20 @@
 <h1>react-redux-boilerplate</h1>
-> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Redux, Redux simple router,Babel, sass, autoprefixer, BrowserSync, Tinypng...
+> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Dynamic routing, Redux, Redux simple router, Babel, sass, autoprefixer, BrowserSync, Tinypng...
 
 Directory Layout:
 ```
 ├── /app/                       # The source code of the application
 │   ├── /actions/            	# Redux action creators
-│   ├── /components/            # Components/pages
+│   ├── /components/            # Generic React Components (generally Dumb components)
 │   ├── /constants/            	# Constants (action types etc.)
-│   ├── /containers/            # Containers
+│   ├── /containers/            # Components that provide context (e.g. Redux Provider)
 │   ├── /public/            	# Static files which are copied into the /dist/ root folder
 │   ├── /reducers/            	# Redux reducers
+│   ├── /routes/            	# Application route definitions
 │   ├── /store/            	    # Redux store configuration
 │   ├── /tmpl/               	# Static content (plain HTML or Markdown)
 │   ├── /utils/            		# Generic utilities
 │   ├── index.js            	# Application bootstrap and rendering
-│   ├── routes.js            	# Application route definitions
 │
 ├── /build/                     # The folder for compiled output
 ├── /dist/                      # The folder for deploy output

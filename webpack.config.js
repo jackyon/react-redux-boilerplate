@@ -63,7 +63,8 @@ var common = {
     	// app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
-        filename: '[name].js'
+        filename: '[name].js',
+		chunkFilename: '[id].chunk.js'
     },
     module: {
 		loaders: [

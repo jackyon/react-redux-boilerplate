@@ -8,6 +8,7 @@ import Header from '../../components/Header/'
 class App extends Component {
 	render() {
 	    const { todos, actions } = this.props
+	    
 		return (
 			<div className="page-container">
 				<Header todos={todos} actions={actions}/>
