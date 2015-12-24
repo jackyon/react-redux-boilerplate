@@ -90,6 +90,12 @@ var common = {
 		    	test: /\.(png|jpg|jpeg|gif)$/,
 		    	loader: 'url?limit=10000',
 				include: APP_PATH
+		    },
+		    //json loader
+		    {
+		    	test: /\.json$/,
+		    	loader: 'json',
+				include: APP_PATH
 		    }
 		]
     },
