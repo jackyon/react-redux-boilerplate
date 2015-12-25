@@ -76,6 +76,13 @@ you can custom the scripts in package.json file.
 
 
 
+<h2>The issues you might be focued.</h2>
+<h3>Scrolling</h3>
+react router have scroll behaviors issues, i.e:
+getting scroll position to reset to the top of a page on navigation
+
+you can see the solution from here: 
+https://github.com/rackt/react-router/blob/73e6c85f427c48f90bae0bb0e9745b6b48536e2f/CHANGES.md#scrolling
 
 
 
