@@ -8,7 +8,7 @@ module.exports = {
 				require('./routes/SubPageTwo/')
 			])
 		})
-	}
+	},
 
 	getComponent(location, cb) {
 		require.ensure([], (require) => {

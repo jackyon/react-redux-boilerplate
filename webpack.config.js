@@ -23,13 +23,6 @@ var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 
 /* html generate automatically */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-	
-/* expose the value to global */
-var ProvidePlugin = new webpack.ProvidePlugin({
-		$: "jquery",
-	    jQuery: "jquery",
-	    "window.jQuery": "jquery"
-	});
 
 /* browserSync */
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');

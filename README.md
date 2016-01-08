@@ -84,6 +84,11 @@ getting scroll position to reset to the top of a page on navigation
 you can see the solution from here: 
 https://github.com/rackt/react-router/blob/73e6c85f427c48f90bae0bb0e9745b6b48536e2f/CHANGES.md#scrolling
 
+<h3>300ms tap delay</h3>
+iOS's dreaded 300ms tap delay. React's onClick attribute falls prey to it. Facebook's working on a solution in the form of TapEventPlugin, but it won't be made available until 1.0.
+
+see more from here:
+https://github.com/zilverline/react-tap-event-plugin
 
 
 
