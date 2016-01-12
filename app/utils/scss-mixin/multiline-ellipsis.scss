@@ -1,0 +1,11 @@
+//usage
+// .title {
+//     @include multiline-ellipsis(2)
+// }
+
+@mixin multiline-ellipsis($line) {
+    display: -webkit-box;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical; 
+	overflow: hidden;
+}
