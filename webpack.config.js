@@ -24,6 +24,13 @@ var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 /* html generate automatically */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+/* expose the value to global */
+var ProvidePlugin = new webpack.ProvidePlugin({
+		$: "jquery",
+	    jQuery: "jquery",
+	    "window.jQuery": "jquery"
+	});
+
 /* browserSync */
 var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 var BrowserSyncPlugin = new BrowserSyncPlugin({
@@ -94,6 +101,7 @@ var common = {
     },
     resolve: {
 		alias: {
+			react: 'react',
 			index: path.resolve(ROOT_PATH, 'app/index.js')
 		}
     },
@@ -112,7 +120,7 @@ var common = {
 			chunks: ['app']
 		}),
 
-    	ProvidePlugin
+    	// ProvidePlugin enable this if you want to expose soem global variable
     ]
 }
 
