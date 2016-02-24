@@ -45,12 +45,15 @@ $ npm run deploy
 Image compress:<br>
 <h5>PNG:</h5>
 ```
+$ npm install tinypng-tool
+$ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz(change to your own api.)
 $ npm run tinypng
 ```
 > hint: png compress is using tinypng service, make sure you change the above api to your owns. 
 > Get api: https://tinypng.com/developers (free 500 images/month. )
 > after you get the api, run:
 > $ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz 
+> tips: you can also copy "npm run tinypng;" inside to your package deploy commond, so you no need to run compress commond every time after you deploy
 
 <h5>JPEG:</h5>
 ```

@@ -156,7 +156,8 @@ if(TARGET === 'dev') {
 		    	'process.env': {
 		    		'NODE_ENV': JSON.stringify('development'),
 		    	},
-		    	'__DEV__': true
+		    	'__DEV__': true,
+          		'__PRODUCTION__': false
 		    }),
     	]
   	});
@@ -188,8 +189,9 @@ if(TARGET === 'browsersync') {
 			CssExtractPlugin,
 	    	BrowserSyncPlugin,
 	    	new webpack.DefinePlugin({
-			  'process.env': {NODE_ENV: '"production"'},
-			  '__DEV__': false
+				'process.env': {NODE_ENV: '"production"'},
+				'__DEV__': false,
+          		'__PRODUCTION__': false
 			})
     	]
   	});
@@ -219,8 +221,9 @@ if (TARGET === 'deploy') {
 			UglifyJsPlugin,
 			CssExtractPlugin,
 			new webpack.DefinePlugin({
-			  'process.env': {NODE_ENV: '"production"'},
-			  '__DEV__': false
+				'process.env': {NODE_ENV: '"production"'},
+				'__DEV__': false,
+          		'__PRODUCTION__': true
 			})
     	]
   	});
