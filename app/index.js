@@ -3,14 +3,14 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { Router } from 'react-router'
 import createHashHistory from 'history/lib/createHashHistory'
-import { syncReduxAndRouter } from 'redux-simple-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store/configureStore'
 import routes from './routes'
 
 const store = configureStore()
 const history = createHashHistory()
 
-syncReduxAndRouter(history, store)
+syncHistoryWithStore(history, store)
 
 render(
 	<Provider store={store}>
