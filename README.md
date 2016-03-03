@@ -109,30 +109,33 @@ https://github.com/gajus/redux-immutable
 
 - Redux logger middleware: Transform Immutable objects into JSON
 ```
-import Immutable from 'immutable';
-import { applyMiddleware, createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunk from 'redux-thunk';
+import rootReducer from '../reducers';
 import createLogger from 'redux-logger';
-
-import rootReducer from './reducers';
+import Immutable from 'immutable';
 
 const logger = createLogger({
-  // Transform Immutable objects into JSON
-  transformer: (state) => {
-    const newState = {};
-    for (let i of Object.keys(state)) {
-      if (Immutable.Iterable.isIterable(state[i])) {
-        newState[i] = state[i].toJS();
-      } else {
-        newState[i] = state[i];
-      }
-    }
-    return newState;
-  }
+	// Transform Immutable objects into JSON
+	stateTransformer: (state) => {
+		const newState = {};
+		
+		for (let i of Object.keys(state)) {
+			if (Immutable.Iterable.isIterable(state[i])) {
+				newState[i] = state[i].toJS();
+			} else {
+				newState[i] = state[i];
+			}
+		}
+		return newState;
+	}
 });
 
+const createStoreWithMiddleware = applyMiddleware(
+  thunk, logger
+)(createStore);
+
 export default function configureStore(initialState) {
-  return applyMiddleware(
-    logger
-  )(createStore)(rootReducer, initialState);
-};
+  return createStoreWithMiddleware(rootReducer, initialState);
+}
 ```
