@@ -98,3 +98,41 @@ https://github.com/zilverline/react-tap-event-plugin
 
 
 
+<h2>Advanced Performance</h2>
+<h3>Immutablejs</h3>
+Immutability makes tracking changes cheap; a change will always result in a new object so we only need to check if the reference to the object has changed. More: https://facebook.github.io/immutable-js/
+
+how to use with react/redux/redux logger:
+
+- using with react-router-redux:
+https://github.com/gajus/redux-immutable
+
+- Redux logger middleware: Transform Immutable objects into JSON
+```
+import Immutable from 'immutable';
+import { applyMiddleware, createStore } from 'redux';
+import createLogger from 'redux-logger';
+
+import rootReducer from './reducers';
+
+const logger = createLogger({
+  // Transform Immutable objects into JSON
+  transformer: (state) => {
+    const newState = {};
+    for (let i of Object.keys(state)) {
+      if (Immutable.Iterable.isIterable(state[i])) {
+        newState[i] = state[i].toJS();
+      } else {
+        newState[i] = state[i];
+      }
+    }
+    return newState;
+  }
+});
+
+export default function configureStore(initialState) {
+  return applyMiddleware(
+    logger
+  )(createStore)(rootReducer, initialState);
+};
+```
