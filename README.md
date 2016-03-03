@@ -108,7 +108,7 @@ how to use with react/redux/redux logger:
 https://github.com/gajus/redux-immutable
 
 - Redux logger middleware: Transform Immutable objects into JSON
-```
+```javascript
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import rootReducer from '../reducers';
