@@ -109,35 +109,51 @@ https://github.com/gajus/redux-immutable
 
 - Redux logger middleware: Transform Immutable objects into JSON
 ```javascript
-import { createStore, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import rootReducer from '../reducers';
-import createLogger from 'redux-logger';
-import Immutable from 'immutable';
+import { compose, createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import rootReducer from '../reducers/'
+import Immutable from 'immutable'
 
-const logger = createLogger({
-	collapsed: true,
+let finalCreateStore
+let middleware = [thunk]
 
-	// Transform Immutable objects into JSON
-	stateTransformer: (state) => {
-		const newState = {};
+if (__DEV__) {
+    const logger = require('redux-logger')
 
-		for (let i of Object.keys(state)) {
-			if (Immutable.Iterable.isIterable(state[i])) {
-				newState[i] = state[i].toJS();
-			} else {
-				newState[i] = state[i];
-			}
-		}
-		return newState;
-	}
-});
+    // Transform Immutable objects into JSON
+    const stateTransformer = (state) => {
+        const newState = {};
+        for (let i of Object.keys(state)) {
+            if (Immutable.Iterable.isIterable(state[i])) {
+                newState[i] = state[i].toJS();
+            } else {
+                newState[i] = state[i];
+            }
+        }
+        return newState;
+    };
 
-const createStoreWithMiddleware = applyMiddleware(
-  thunk, logger
-)(createStore);
+    finalCreateStore = compose(
+        applyMiddleware(...middleware),
+        applyMiddleware(logger({
+            collapsed: true,
+            stateTransformer
+        }))
+    )(createStore)
+} else {
+    finalCreateStore = applyMiddleware(...middleware)(createStore)
+}
 
 export default function configureStore(initialState) {
-  return createStoreWithMiddleware(rootReducer, initialState);
+    const store = finalCreateStore(rootReducer, initialState)
+    if (module.hot) {
+        // Enable Webpack hot module replacement for reducers
+        module.hot.accept('../reducers/', () => {
+            const nextReducer = require('../reducers/')
+            store.replaceReducer(nextReducer)
+        })
+    }
+
+    return store
 }
 ```
