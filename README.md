@@ -19,6 +19,8 @@ Directory Layout:
 ├── /build/                     # The folder for compiled output
 ├── /dist/                      # The folder for deploy output
 ├── /node_modules/              # 3rd-party libraries and utilities
+├── .babelrc                    # configuration file for babel
+├── .editorconfig               # configuration file for github editor
 ├── webpack.config.js           # configuration file for webpack
 ├── package.json                # The list of 3rd party libraries and utilities
 ```
@@ -96,6 +98,10 @@ iOS's dreaded 300ms tap delay. React's onClick attribute falls prey to it. Faceb
 see more from here:
 https://github.com/zilverline/react-tap-event-plugin
 
+<h3>Babel polyfill</h3>
+the Babel polyfill wasn't included in the framework by default, feel free to follow this the article below if you want to use it.
+http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/?utm_source=jsgroup
+
 
 
 <h2>Advanced Performance</h2>
@@ -107,7 +113,8 @@ how to use with react/redux/redux logger:
 - using with react-router-redux:
 https://github.com/gajus/redux-immutable
 
-- Redux logger middleware: Transform Immutable objects into JSON
+- Redux logger middleware: Transform Immutable objects into JSON 
+(example file from "store/configureStore.js")
 ```javascript
 import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'

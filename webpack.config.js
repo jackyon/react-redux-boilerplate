@@ -59,7 +59,7 @@ var TARGET = process.env.npm_lifecycle_event;
  * ============================================================ */
 var common = {
 	entry: {
-    	app: ['react','index']
+    	app: ['react', 'index']
     	// app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
