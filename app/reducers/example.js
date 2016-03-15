@@ -1,5 +1,4 @@
-import { ADD_TODO, COMPLETE_TODO, SET_VISIBILITY_FILTER, VisibilityFilters } from '../constants/ActionTypes.js'
-const { SHOW_ALL } = VisibilityFilters
+import { ADD_TODO, COMPLETE_TODO } from '../constants/ActionTypes.js';
 
 const initialState = [
   {
@@ -7,7 +6,7 @@ const initialState = [
     completed: false,
     id: 0
   }
-]
+];
 
 export default function example(state = initialState, action) {
   switch (action.type) {
@@ -18,7 +17,7 @@ export default function example(state = initialState, action) {
           text: action.text,
           completed: false
         }
-      ]
+      ];
     case COMPLETE_TODO:
       return [
         ...state.slice(0, action.index),
@@ -26,8 +25,8 @@ export default function example(state = initialState, action) {
           completed: true
         }),
         ...state.slice(action.index + 1)
-      ]
+      ];
     default:
-      return state
+      return state;
   }
 }

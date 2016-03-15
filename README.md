@@ -20,7 +20,9 @@ Directory Layout:
 ├── /dist/                      # The folder for deploy output
 ├── /node_modules/              # 3rd-party libraries and utilities
 ├── .babelrc                    # configuration file for babel
-├── .editorconfig               # configuration file for github editor
+├── .editorconfig               # Configures editor rules
+├── .eslintrc                   # Configures ESLint
+├── .eslintignore               # ingore folders/files while using ESLint
 ├── webpack.config.js           # configuration file for webpack
 ├── package.json                # The list of 3rd party libraries and utilities
 ```
@@ -40,6 +42,10 @@ Browser sync:
 ```
 $ npm run browsersync
 ```
+Lint:
+```
+$ npm run lint
+```
 Deploy:
 ```
 $ npm run deploy
@@ -52,12 +58,12 @@ $ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz(change to your own api.)
 $ npm run tinypng
 ```
 > hint: png compress is using tinypng service, make sure you change the above api to your owns.
-> 
+>
 > Get api: https://tinypng.com/developers (free 500 images/month. )
-> 
+>
 > after you get the api, run:
 > $ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz
-> 
+>
 > tips: you can also copy "npm run tinypng;" inside to your package deploy commond, so you no need to run compress commond every time after you deploy
 
 <h5>JPEG:</h5>
@@ -89,7 +95,7 @@ you can custom the scripts in package.json file.
 react router have scroll behaviors issues, i.e:
 getting scroll position to reset to the top of a page on navigation
 
-you can see the solution from here: 
+you can see the solution from here:
 https://github.com/rackt/react-router/blob/73e6c85f427c48f90bae0bb0e9745b6b48536e2f/CHANGES.md#scrolling
 
 <h3>300ms tap delay</h3>
@@ -113,7 +119,7 @@ how to use with react/redux/redux logger:
 - using with react-router-redux:
 https://github.com/gajus/redux-immutable
 
-- Redux logger middleware: Transform Immutable objects into JSON 
+- Redux logger middleware: Transform Immutable objects into JSON
 (example file from "store/configureStore.js")
 ```javascript
 import { compose, createStore, applyMiddleware } from 'redux'
