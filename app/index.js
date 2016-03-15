@@ -10,11 +10,11 @@ import routes from './routes';
 const store = configureStore();
 const history = createHashHistory();
 
-syncHistoryWithStore(history, store);
+syncHistoryWithStore( history, store );
 
 render(
 	<Provider store={store}>
 		<Router history={history} routes={routes} />
 	</Provider>,
-	document.getElementById('app')
+	document.getElementById( 'app' )
 );

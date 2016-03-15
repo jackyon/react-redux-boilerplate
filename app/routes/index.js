@@ -1,11 +1,11 @@
 export default {
-    childRoutes: [{
+    childRoutes: [ {
         path: '/',
-        component: require('../containers/App/'),
-        indexRoute: { component: require('../containers/Home/') },
+        component: require( '../containers/App/' ),
+        indexRoute: { component: require( '../containers/Home/' ) },
         childRoutes: [
-            require('./Home'),
-            require('./About')
+            require( './Home' ),
+            require( './About' )
         ]
-    }]
+    } ]
 };

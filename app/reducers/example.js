@@ -8,8 +8,8 @@ const initialState = [
     }
 ];
 
-export default function example(state = initialState, action) {
-    switch (action.type) {
+export default function example( state = initialState, action ) {
+    switch ( action.type ) {
         case ADD_TODO:
             return [
                 ...state,
@@ -21,11 +21,11 @@ export default function example(state = initialState, action) {
 
         case COMPLETE_TODO:
             return [
-                ...state.slice(0, action.index),
-                Object.assign({}, state[action.index], {
+                ...state.slice( 0, action.index ),
+                Object.assign( {}, state[ action.index ], {
                     completed: true
-                }),
-                ...state.slice(action.index + 1)
+                } ),
+                ...state.slice( action.index + 1 )
             ];
 
         default:

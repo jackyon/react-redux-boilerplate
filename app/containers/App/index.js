@@ -13,26 +13,26 @@ class App extends Component {
             <div className="page-container">
                 <Header todos={todos} actions={actions} />
                 <div className="view-container">
-                    {React.cloneElement(this.props.children, { appProps: this.props })}
+                    {React.cloneElement( this.props.children, { appProps: this.props } )}
                 </div>
             </div>
         );
 	}
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ( state ) => {
     return {
         todos: state.example
 	};
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = ( dispatch ) => {
     return {
-        actions: bindActionCreators(TodoActions, dispatch)
+        actions: bindActionCreators( TodoActions, dispatch )
 	};
 };
 
 export default connect(
 	mapStateToProps,
 	mapDispatchToProps
-)(App);
+)( App );

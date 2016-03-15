@@ -58,7 +58,19 @@
     "react/require-extension": 1,
     "react/self-closing-comp": 1,
     "react/sort-comp": 1,
-    "react/wrap-multilines": 1
+    "react/wrap-multilines": 1,
+
+    "comma-spacing": 1,
+    "array-bracket-spacing": [2, "always"],
+    "block-spacing": [2, "always"],
+    "computed-property-spacing": [2, "always"],
+    "keyword-spacing": 1,
+    "object-curly-spacing": [2, "always"],
+    "semi-spacing": [2, {"before": false, "after": true}],
+    "space-before-blocks": [2, "always"],
+    "space-in-parens": [2, "always"],
+    "space-infix-ops": [2, {"int32Hint": false}],
+    "arrow-spacing": 1
   },
   "globals": {
     "__DEV__": true
