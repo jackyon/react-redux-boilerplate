@@ -1,5 +1,5 @@
 <h1>react-redux-boilerplate</h1>
-> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Dynamic routing, Redux, Redux simple router, Babel, sass, autoprefixer, BrowserSync, Tinypng...
+> Containing modern web development tools such as Webpack, React Hot Loader, React Router, Dynamic routing, Redux, Redux simple router, esLint, Babel6, sass, autoprefixer, BrowserSync, Tinypng...
 
 Directory Layout:
 ```
@@ -42,7 +42,7 @@ Browser sync:
 ```
 $ npm run browsersync
 ```
-Lint:
+esLint:
 ```
 $ npm run lint
 ```
