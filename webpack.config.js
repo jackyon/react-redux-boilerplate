@@ -109,7 +109,10 @@ var common = {
     	//Common Chunk
     	new CommonsChunkPlugin('app', 'app.js'),
     	// new CommonsChunkPlugin('header-main.js', ['header','main']),
-    	
+
+        //DedupePlugin
+        new webpack.optimize.DedupePlugin(),
+
 		//html
 		new HtmlWebpackPlugin({
 			title: 'index page',
@@ -117,7 +120,13 @@ var common = {
 			inject: 'body',
 			filename: '../index.html',
 			hash: false,
-			chunks: ['app']
+			chunks: ['app'],
+            minify: {
+                minifyJS: true,
+                collapseWhitespace: true,
+                removeComments: true,
+                removeRedundantAttributes: true
+            }
 		}),
 
     	// ProvidePlugin enable this if you want to expose soem global variable
@@ -201,7 +210,7 @@ if(TARGET === 'browsersync') {
 /* =============================================================
  *  deploy
  * ============================================================ */
-if (TARGET === 'deploy') {
+if (TARGET === 'deploy' || TARGET === 'stats') {
 	module.exports = merge(common, {
     	output: {
 	        path: path.resolve(ROOT_PATH, 'dist/assets/'),

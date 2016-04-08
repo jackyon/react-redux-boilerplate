@@ -23,6 +23,7 @@ Directory Layout:
 ├── .editorconfig               # Configures editor rules
 ├── .eslintrc                   # Configures ESLint
 ├── .eslintignore               # ingore folders/files while using ESLint
+├── stats.json                  # Analyzing build statistics
 ├── webpack.config.js           # configuration file for webpack
 ├── package.json                # The list of 3rd party libraries and utilities
 ```
@@ -46,15 +47,20 @@ esLint:
 ```
 $ npm run lint
 ```
+stats:
+```
+$ npm run stats (after executed, upload 'stats.json' file to http://webpack.github.io/analyse/)
+```
 Deploy:
 ```
 $ npm run deploy
 ```
+
 Image compress:<br>
 <h5>PNG:</h5>
 ```
 $ npm install tinypng-tool
-$ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz(change to your own api.)
+$ tinypng -k I_KC7xGPxXfZPrEbrc-kXWBetAQ323rz (change to your own api.)
 $ npm run tinypng
 ```
 > hint: png compress is using tinypng service, make sure you change the above api to your owns.
