@@ -17,7 +17,8 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 		minimize: true,
 		compress: {
-	        warnings: false
+	        warnings: false,
+            screw_ie8: true
 	    }
 	});
 
@@ -142,7 +143,7 @@ if(TARGET === 'dev') {
 	        path: path.resolve(BUILD_PATH, 'build/assets/'),
   			publicPath: 'http://127.0.0.1:8080/'
 	    },
-    	devtool: "source-map",
+    	devtool: "cheap-module-eval-source-map",
 	    module: {
 	    	loaders: [
 				//jsx
@@ -182,7 +183,7 @@ if(TARGET === 'browsersync') {
 	        path: path.resolve(ROOT_PATH, 'build/assets/'),
 	        publicPath: 'assets/'
 	    },
-    	devtool: "source-map",
+    	devtool: "cheap-module-eval-source-map",
 	    module: {
 	    	loaders: [
 	    		//sass
