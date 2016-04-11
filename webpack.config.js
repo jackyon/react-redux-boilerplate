@@ -111,9 +111,6 @@ var common = {
     	new CommonsChunkPlugin('app', 'app.js'),
     	// new CommonsChunkPlugin('header-main.js', ['header','main']),
 
-        //DedupePlugin
-        new webpack.optimize.DedupePlugin(),
-
 		//html
 		new HtmlWebpackPlugin({
 			title: 'index page',
@@ -230,6 +227,7 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 	    plugins: [
 			UglifyJsPlugin,
 			CssExtractPlugin,
+            new webpack.optimize.DedupePlugin(),
 			new webpack.DefinePlugin({
 				'process.env': {NODE_ENV: '"production"'},
 				'__DEV__': false,

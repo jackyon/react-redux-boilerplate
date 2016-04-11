@@ -6,7 +6,7 @@
   "scripts": {
     "common": "rm -rf build build/*; mkdir build;",
     "browsersync": "npm run common; webpack --watch",
-    "deploy": "rm -rf dist/*; cp -R akpp/public/ dist/; webpack",
+    "deploy": "rm -rf dist/*; cp -R akpp/public/* dist/; webpack",
     "dev": "npm run common;webpack-dev-server --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
     "tinypng": "tinypng -r dist/",
     "lint": "eslint --fix --format 'node_modules/eslint-friendly-formatter' . --ext .js --ext .jsx || true",
