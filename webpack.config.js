@@ -16,6 +16,9 @@ var BUILD_PATH = path.resolve(ROOT_PATH, 'build');
 /* minimize js,css,img... */
 var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 		minimize: true,
+        output: {
+            comments: false
+        },
 		compress: {
 	        warnings: false,
             screw_ie8: true
