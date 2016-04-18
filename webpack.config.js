@@ -152,6 +152,12 @@ if(TARGET === 'dev') {
 	      			loaders: ['react-hot', 'babel'],
 	      			include: APP_PATH
 				},
+                //less
+                {
+                    test: /\.less$/,
+                    loader: 'style!css?sourceMap!autoprefixer!less?sourceMap',
+                    include: APP_PATH
+                },
 	    		//sass
 				{
 			    	test: /\.scss$/,
@@ -186,11 +192,16 @@ if(TARGET === 'browsersync') {
     	devtool: "cheap-module-eval-source-map",
 	    module: {
 	    	loaders: [
+                //less
+                {
+                    test: /\.less$/,
+                    loader: 'style!css?sourceMap!autoprefixer!less?sourceMap',
+                    include: APP_PATH
+                },
 	    		//sass
 				{
 			    	test: /\.scss$/,
 			    	loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap',
-			    	// loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
 			    	include: APP_PATH
 			    }
 	    	]
@@ -219,11 +230,15 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 	    },
 	    module: {
 	    	loaders: [
+                //less
+                {
+                    test: /\.less$/,
+                    loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!less')
+                },
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass'),
-			    	include: APP_PATH
+			    	loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
 			    }
 	    	]
 	    },
