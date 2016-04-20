@@ -50,7 +50,11 @@ var CommonsChunkPlugin = require("webpack/lib/optimize/CommonsChunkPlugin");
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var CssExtractPlugin = new ExtractTextPlugin("[name].css");
 
-// merge
+/* postcss loader */
+var precss       = require('precss');
+var autoprefixer = require('autoprefixer');
+
+/* merge */
 var merge = require('webpack-merge');
 var TARGET = process.env.npm_lifecycle_event;
 
@@ -81,7 +85,7 @@ var common = {
 			//css
 			{
 				test: /\.css$/,
-      			loader: 'style!css',
+      			loader: 'style!css!postcss',
       			include: APP_PATH
 			},
 			//font
@@ -102,6 +106,9 @@ var common = {
 				include: APP_PATH
 		    }
 		]
+    },
+    postcss: function () {
+        return [precss, autoprefixer];
     },
     resolve: {
 		alias: {
@@ -155,13 +162,13 @@ if(TARGET === 'dev') {
                 //less
                 {
                     test: /\.less$/,
-                    loader: 'style!css?sourceMap!autoprefixer!less?sourceMap',
+                    loader: 'style!css?sourceMap!postcss!less?sourceMap',
                     include: APP_PATH
                 },
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap',
+			    	loader: 'style!css?sourceMap!postcss!sass?sourceMap',
 			    	include: APP_PATH
 			    }
 	    	]
@@ -195,13 +202,13 @@ if(TARGET === 'browsersync') {
                 //less
                 {
                     test: /\.less$/,
-                    loader: 'style!css?sourceMap!autoprefixer!less?sourceMap',
+                    loader: 'style!css?sourceMap!postcss!less?sourceMap',
                     include: APP_PATH
                 },
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: 'style!css?sourceMap!autoprefixer!sass?sourceMap',
+			    	loader: 'style!css?sourceMap!postcss!sass?sourceMap',
 			    	include: APP_PATH
 			    }
 	    	]
@@ -233,12 +240,12 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
                 //less
                 {
                     test: /\.less$/,
-                    loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!less')
+                    loader: ExtractTextPlugin.extract('style', 'css!postcss!less')
                 },
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: ExtractTextPlugin.extract('style', 'css!autoprefixer!sass')
+			    	loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
 			    }
 	    	]
 	    },
