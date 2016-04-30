@@ -58,6 +58,22 @@ var autoprefixer = require('autoprefixer');
 var merge = require('webpack-merge');
 var TARGET = process.env.npm_lifecycle_event;
 
+/* get ip */
+function getServerIp() {
+  var os = require('os');
+  var ifaces = os.networkInterfaces();
+  var values = Object.keys(ifaces).map(function(name) {
+    return ifaces[name];
+  });
+  values = [].concat.apply([], values).filter(function(val){
+    return val.family == 'IPv4' && val.internal == false;
+  });
+
+  return values.length ? values[0].address : '0.0.0.0';
+}
+
+var ipAddress = getServerIp();
+
 
 
 
@@ -148,7 +164,7 @@ if(TARGET === 'dev') {
 	module.exports = merge(common, {
     	output: {
 	        path: path.resolve(BUILD_PATH, 'build/assets/'),
-  			publicPath: 'http://127.0.0.1:8080/'
+  			publicPath: 'http://' +ipAddress + ':8080/'
 	    },
     	devtool: "cheap-module-eval-source-map",
 	    module: {
