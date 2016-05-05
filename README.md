@@ -14,6 +14,7 @@ Directory Layout:
 │   ├── /store/            	    # Redux store configuration
 │   ├── /tmpl/               	# Static content (plain HTML or Markdown)
 │   ├── /utils/            		# Generic utilities
+│   ├── history.js              # history configuration
 │   ├── index.js            	# Application bootstrap and rendering
 │
 ├── /build/                     # The folder for compiled output
@@ -97,18 +98,13 @@ you can custom the scripts in package.json file.
 
 
 <h2>The issues you might be focued.</h2>
-<h3>Scrolling</h3>
-react router have scroll behaviors issues, i.e:
-getting scroll position to reset to the top of a page on navigation
-
-you can see the solution from here:
-https://github.com/rackt/react-router/blob/73e6c85f427c48f90bae0bb0e9745b6b48536e2f/CHANGES.md#scrolling
-
 <h3>300ms tap delay</h3>
 iOS's dreaded 300ms tap delay. React's onClick attribute falls prey to it. Facebook's working on a solution in the form of TapEventPlugin, but it won't be made available until 1.0.
 
 see more from here:
 https://github.com/zilverline/react-tap-event-plugin
+
+- another solution: react fastclick
 
 <h3>Babel polyfill</h3>
 the Babel polyfill wasn't included in the framework by default, feel free to follow this the article below if you want to use it.
