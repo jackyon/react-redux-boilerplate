@@ -28,6 +28,9 @@ var UglifyJsPlugin = new webpack.optimize.UglifyJsPlugin({
 /* html generate automatically */
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
+/* generate all your favicons and icons for you */
+var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+
 /* expose the value to global */
 var ProvidePlugin = new webpack.ProvidePlugin({
 		$: "jquery",
@@ -274,6 +277,10 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 	    plugins: [
 			UglifyJsPlugin,
 			CssExtractPlugin,
+            new FaviconsWebpackPlugin({
+                logo: './app/public/react-logo.png',
+                title: 'react app'
+            }),
             new webpack.optimize.DedupePlugin(),
 			new webpack.DefinePlugin({
 				'process.env': {NODE_ENV: '"production"'},
