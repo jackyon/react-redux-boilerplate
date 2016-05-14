@@ -58,6 +58,9 @@ var autoprefixer = require('autoprefixer');
 var merge = require('webpack-merge');
 var TARGET = process.env.npm_lifecycle_event;
 
+/* automatically launch it's application on a browser */
+const WebpackBrowserPlugin = require('webpack-browser-plugin-fork');
+
 /* get ip */
 function getServerIp() {
   var os = require('os');
@@ -190,6 +193,9 @@ if(TARGET === 'dev') {
 	    	]
 	    },
 	    plugins: [
+            new WebpackBrowserPlugin({
+                url: 'http://' + ipAddress
+            }),
 			CssExtractPlugin,
 			new webpack.DefinePlugin({
 		    	'process.env': {
