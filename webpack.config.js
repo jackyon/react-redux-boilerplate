@@ -31,6 +31,9 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 /* generate all your favicons and icons for you */
 var FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
+/* run any shell commands before or after webpack builds */
+var WebpackShellPlugin = require('webpack-shell-plugin');
+
 /* expose the value to global */
 var ProvidePlugin = new webpack.ProvidePlugin({
 		$: "jquery",
@@ -258,7 +261,7 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 	module.exports = merge(common, {
     	output: {
 	        path: path.resolve(ROOT_PATH, 'dist/assets/'),
-	        publicPath: 'assets/'
+	        publicPath: '/assets/'
 	    },
 	    module: {
 	    	loaders: [
@@ -286,7 +289,11 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 				'process.env': {NODE_ENV: '"production"'},
 				'__DEV__': false,
           		'__PRODUCTION__': true
-			})
+			}),
+            new WebpackShellPlugin({onBuildEnd:['static dist/ -a ' + ipAddress + ';']}),
+            new WebpackBrowserPlugin({
+                url: 'http://' + ipAddress
+            })
     	]
   	});
 }
