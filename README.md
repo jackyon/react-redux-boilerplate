@@ -110,6 +110,9 @@ https://github.com/zilverline/react-tap-event-plugin
 the Babel polyfill wasn't included in the framework by default, feel free to follow this the article below if you want to use it.
 http://jamesknelson.com/using-es6-in-the-browser-with-babel-6-and-webpack/?utm_source=jsgroup
 
+<h3>errors when run 'npm run deploy'</h3>
+In ubuntu system, when you try npm run deploy, it might be cause the errors, if you againest with this, try remove the FaviconsWebpackPlugin configs on webpack.config.js.
+
 
 
 <h2>Advanced Performance</h2>

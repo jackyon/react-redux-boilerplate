@@ -280,6 +280,8 @@ if (TARGET === 'deploy' || TARGET === 'stats') {
 	    plugins: [
 			UglifyJsPlugin,
 			CssExtractPlugin,
+            new webpack.NoErrorsPlugin(),
+            new webpack.optimize.OccurrenceOrderPlugin(),
             new FaviconsWebpackPlugin({
                 logo: './app/public/react-logo.png',
                 title: 'react app'
