@@ -257,45 +257,57 @@ if(TARGET === 'browsersync') {
 /* =============================================================
  *  deploy
  * ============================================================ */
-if (TARGET === 'deploy' || TARGET === 'stats') {
-	module.exports = merge(common, {
-    	output: {
-	        path: path.resolve(ROOT_PATH, 'dist/assets/'),
-	        publicPath: '/assets/'
-	    },
-	    module: {
-	    	loaders: [
-                //less
-                {
-                    test: /\.less$/,
-                    loader: ExtractTextPlugin.extract('style', 'css!postcss!less')
-                },
-	    		//sass
-				{
-			    	test: /\.scss$/,
-			    	loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
-			    }
-	    	]
-	    },
-	    plugins: [
-			UglifyJsPlugin,
-			CssExtractPlugin,
-            new webpack.NoErrorsPlugin(),
-            new webpack.optimize.OccurrenceOrderPlugin(),
-            new FaviconsWebpackPlugin({
-                logo: './app/public/react-logo.png',
-                title: 'react app'
-            }),
-            new webpack.optimize.DedupePlugin(),
-			new webpack.DefinePlugin({
-				'process.env': {NODE_ENV: '"production"'},
-				'__DEV__': false,
-          		'__PRODUCTION__': true
-			}),
+var deployCommon = merge(common, {
+    output: {
+        path: path.resolve(ROOT_PATH, 'dist/assets/'),
+        publicPath: '/assets/'
+    },
+    module: {
+        loaders: [
+            //less
+            {
+                test: /\.less$/,
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!less')
+            },
+            //sass
+            {
+                test: /\.scss$/,
+                loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
+            }
+        ]
+    },
+    plugins: [
+        UglifyJsPlugin,
+        CssExtractPlugin,
+        new webpack.NoErrorsPlugin(),
+        new webpack.optimize.OccurrenceOrderPlugin(),
+        new FaviconsWebpackPlugin({
+            logo: './app/public/react-logo.png',
+            title: 'react app'
+        }),
+        new webpack.optimize.DedupePlugin(),
+        new webpack.DefinePlugin({
+            'process.env': {NODE_ENV: '"production"'},
+            '__DEV__': false,
+            '__PRODUCTION__': true
+        })
+    ]
+});
+
+if (TARGET === 'deploy') {
+	module.exports = merge(deployCommon, {
+        plugins: [
             new WebpackShellPlugin({onBuildEnd:['static dist/ -a ' + ipAddress + ';']}),
             new WebpackBrowserPlugin({
                 url: 'http://' + ipAddress
             })
-    	]
-  	});
+        ]
+    });
+}
+
+/* =============================================================
+ *  stats
+ * ============================================================ */
+if (TARGET === 'stats') {
+    module.exports = deployCommon;
 }
