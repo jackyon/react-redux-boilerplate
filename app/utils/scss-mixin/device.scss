@@ -1,0 +1,41 @@
+//usage
+// .title {
+//     @include ipad {
+//         font-size: 18px;
+//     }
+
+//     @include ipadPortrait {
+//         font-size: 18px;
+//     }
+// }
+
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+/* For general iPad layouts */
+@mixin ipad {
+    @media only screen and (min-device-width : $tablet-width) and (max-device-width : $desktop-width) {
+        @content;
+    }
+}
+
+/* ipad portrait */
+@mixin ipadPortrait {
+    @media only screen and (min-device-width : $tablet-width) and (max-device-width : $desktop-width) and (orientation : portrait) {
+        @content;
+    }
+}
+
+/* ipad landscape */
+@mixin ipadLandscape {
+    @media only screen and (min-device-width : $tablet-width) and (max-device-width : $desktop-width) and (orientation : landscape) {
+        @content;
+    }
+}
+
+/* desktop */
+@mixin desktop {
+    @media (min-width: $desktop-width) {
+        @content;
+    }
+}

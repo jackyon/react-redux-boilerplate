@@ -1,0 +1,9 @@
+//usage
+// .title {
+//     @include font-color-opacity(#333, 0.5);
+// }
+
+@mixin font-color-opacity($color, $opacity: 0.8) {
+    color: $color; /* The Fallback */
+    color: rgba($color, $opacity);
+}
