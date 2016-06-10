@@ -110,8 +110,7 @@ var common = {
 			//css
 			{
 				test: /\.css$/,
-      			loader: 'style!css!postcss',
-      			include: APP_PATH
+      			loader: 'style!css!postcss'
 			},
 			//font
 			{
@@ -187,14 +186,12 @@ if(TARGET === 'dev') {
                 //less
                 {
                     test: /\.less$/,
-                    loader: 'style!css?sourceMap!postcss!less?sourceMap',
-                    include: APP_PATH
+                    loader: 'style!css?sourceMap!postcss!less?sourceMap'
                 },
 	    		//sass
 				{
 			    	test: /\.scss$/,
-			    	loader: 'style!css?sourceMap!postcss!sass?sourceMap',
-			    	include: APP_PATH
+			    	loader: 'style!css?sourceMap!postcss!sass?sourceMap'
 			    }
 	    	]
 	    },

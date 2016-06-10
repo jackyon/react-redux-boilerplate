@@ -1,3 +1,8 @@
+//usage
+// .title {
+//     @include oneline-ellipsis()
+// }
+
 @mixin oneline-ellipsis {
     display: block;
     white-space: nowrap;
