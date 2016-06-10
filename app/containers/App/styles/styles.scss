@@ -1,0 +1,63 @@
+/* global reset */
+menu, ol, ul {
+    padding: 0;
+}
+
+dd {
+    margin: 0;
+}
+
+ul.unstyled {
+	list-style: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.clearfix{
+    *zoom:1
+}
+
+.clearfix:before,.clearfix:after{
+    display:table;
+    content:"";
+    line-height:0
+}
+
+.clearfix:after{
+    clear:both
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -webkit-font-smoothing: antialiased;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+
+/* Change the white to any color ;) */
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+/* How to remove the arrows from input[type=“number”] */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    appearance: none;
+    margin: 0;
+}
+
+/* Remove Input Shadows on iPad  */
+input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
+    appearance: caret;
+}
