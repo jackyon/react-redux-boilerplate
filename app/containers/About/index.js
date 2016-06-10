@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import DocumentMeta from 'react-document-meta';
+import imageExample from './images/reactjs.png';
 
-class Home extends Component {
+class About extends Component {
     render() {
         const metaData = {
-            title: 'Home Page',
-            description: 'Home Page description',
+            title: 'About Page',
+            description: 'About Page description',
             canonical: 'http://example.com/path/to/page',
             meta: {
                 charset: 'utf-8',
@@ -18,10 +19,11 @@ class Home extends Component {
         return (
             <div>
                 <DocumentMeta {...metaData} />
-                <p>Home Page</p>
+                <p>About Page</p>
+                <img src={imageExample} alt="" style={{ 'width': '80px' }} />
             </div>
         );
 	}
 }
 
-export default Home;
+export default About;
