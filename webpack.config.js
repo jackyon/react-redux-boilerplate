@@ -92,7 +92,7 @@ var ipAddress = getServerIp();
  * ============================================================ */
 var common = {
 	entry: {
-    	app: ['react', 'index']
+        vendor: ['jquery', 'app']
     	// app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
@@ -136,13 +136,12 @@ var common = {
     },
     resolve: {
 		alias: {
-			react: 'react',
-			index: path.resolve(ROOT_PATH, 'app/index.js')
-		}
+            app: path.resolve(ROOT_PATH, 'app/containers/App/')
+        }
     },
     plugins: [
     	//Common Chunk
-    	new CommonsChunkPlugin('app', 'app.js'),
+    	new CommonsChunkPlugin('vendor', 'vendor.js'),
     	// new CommonsChunkPlugin('header-main.js', ['header','main']),
 
 		//html
@@ -152,7 +151,7 @@ var common = {
 			inject: 'body',
 			filename: '../index.html',
 			hash: false,
-			chunks: ['app'],
+			chunks: ['vendor'],
             minify: {
                 minifyJS: true,
                 collapseWhitespace: true,
@@ -180,7 +179,7 @@ if(TARGET === 'dev') {
 				//jsx
 				{
 					test: /\.jsx?$/,
-	      			loaders: ['react-hot', 'babel'],
+	      			loaders: ['babel'],
 	      			include: APP_PATH
 				},
                 //less

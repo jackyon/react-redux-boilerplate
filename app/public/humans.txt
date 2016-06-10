@@ -8,9 +8,8 @@
 
 # THANKS
 
-    React, Webpack and so many useful tools/frameworks.
+    Webpack and so many useful tools/frameworks.
 
 # TECHNOLOGY COLOPHON
 
-    CSS3, HTML5, JavaScript, Scss
-    React, Flux, Webpack, etc...
+    CSS3, HTML5, JavaScript, Scss, Webpack, etc...
