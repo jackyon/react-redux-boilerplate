@@ -56,8 +56,3 @@ input[type=number]::-webkit-outer-spin-button {
     appearance: none;
     margin: 0;
 }
-
-/* Remove Input Shadows on iPad  */
-input[type="text"], input[type="email"], input[type="search"], input[type="password"] {
-    appearance: caret;
-}
