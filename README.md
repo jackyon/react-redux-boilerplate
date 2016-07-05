@@ -40,6 +40,10 @@ Dev:
 ```
 $ npm run dev
 ```
+Dev Quiet(only show important infos):
+```
+$ npm run dev-quiet
+```
 Browser sync:
 ```
 $ npm run browsersync
