@@ -8,6 +8,7 @@
     "browsersync": "npm run common; webpack --watch",
     "deploy": "rm -rf dist/*; cp -R app/public/* dist/; webpack",
     "dev": "npm run common; cp -R app/public/* build/; webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
+    "dev-quiet": "npm run dev | grep -v '[[0-9]]'",
     "tinypng": "tinypng -r dist/",
     "lint": "eslint --fix --format 'node_modules/eslint-friendly-formatter' . --ext .js --ext .jsx || true",
     "stats": "webpack --profile --json > stats.json"
@@ -32,6 +33,7 @@
     "extract-text-webpack-plugin": "^0.8.2",
     "favicons-webpack-plugin": "^0.0.6",
     "file-loader": "^0.8.4",
+    "happypack": "^2.1.1",
     "html-webpack-plugin": "^2.17.0",
     "json-loader": "^0.5.4",
     "less": "^2.6.1",
