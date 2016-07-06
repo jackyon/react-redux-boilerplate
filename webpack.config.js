@@ -1,6 +1,9 @@
 var path = require('path');
 var webpack = require('webpack');
+<<<<<<< HEAD
 console.log('branch');
+=======
+>>>>>>> master
 
 /* =============================================================
  *  config for path
