@@ -1,11 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
-<<<<<<< HEAD
-console.log('test');
-
-=======
-console.log('test one more time');
->>>>>>> master
+console.log('branch');
 
 /* =============================================================
  *  config for path
