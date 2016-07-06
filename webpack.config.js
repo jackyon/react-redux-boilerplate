@@ -1,7 +1,11 @@
 var path = require('path');
 var webpack = require('webpack');
+<<<<<<< HEAD
 console.log('test');
 
+=======
+console.log('test one more time');
+>>>>>>> master
 
 /* =============================================================
  *  config for path

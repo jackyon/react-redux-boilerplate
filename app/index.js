@@ -5,7 +5,6 @@ import { applyRouterMiddleware, Router } from 'react-router';
 import useScroll from 'react-router-scroll';
 import { history, store } from './history'
 import routes from './routes';
-console.log('test');
 
 render(
 	<Provider store={store}>
