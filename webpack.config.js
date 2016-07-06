@@ -1,6 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-console.log('test one more time');
 
 /* =============================================================
  *  config for path
