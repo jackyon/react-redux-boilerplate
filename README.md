@@ -40,7 +40,7 @@ Dev:
 ```
 $ npm run dev
 ```
-Dev Quiet(only show important infos):
+Dev quiet(only show important infos):
 ```
 $ npm run dev-quiet
 ```
