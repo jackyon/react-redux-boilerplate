@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "just for test",
     "common": "rm -rf build build/*; mkdir build;",
     "browsersync": "npm run common; webpack --watch",
     "deploy": "rm -rf dist/*; cp -R app/public/* dist/; webpack",
