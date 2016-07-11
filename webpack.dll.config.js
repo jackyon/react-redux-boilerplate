@@ -7,9 +7,14 @@ module.exports = {
             'react',
             'react-dom',
             'redux',
+            'react-redux',
             'react-router',
             'history',
-            'react-router-redux'
+            'react-router-redux',
+            'react-document-meta',
+            'react-router-scroll',
+            'redux-logger',
+            'redux-thunk'
         ]
     },
     output:  {

@@ -1,7 +1,5 @@
 var path = require('path');
 var webpack = require('webpack');
-console.log('dll test')
-
 
 /* =============================================================
  *  config for path
@@ -99,7 +97,7 @@ var HappyPack = require('happypack');
  * ============================================================ */
 var common = {
     entry: {
-        app: ['react', 'index']
+        app: ['index']
         // app: path.resolve(ROOT_PATH, 'app/components/app/app.js')
     },
     output: {
@@ -145,7 +143,6 @@ var common = {
         root: path.resolve(ROOT_PATH, 'app'),
         extensions: ['', '.js', '.jsx', '.scss'],
         alias: {
-            react: 'react',
             index: path.resolve(ROOT_PATH, 'app/index.js')
         }
     },
@@ -175,16 +172,6 @@ var common = {
             threads: 4,
             loaders: [ 'babel?cacheDirectory=true' ],
             cache: true
-        }),
-
-        new webpack.DllReferencePlugin({
-            context: __dirname,
-            manifest: require('./build/vendor-manifest.json')
-        }),
-
-        new AddAssetHtmlPlugin({
-            filename: require.resolve('./build/vendor.dll.js'),
-            includeSourcemap: false
         })
 
         // ProvidePlugin enable this if you want to expose soem global variable
@@ -233,6 +220,16 @@ if(TARGET === 'dev') {
                 '__DEV__': true,
                 '__PRODUCTION__': false
             }),
+
+            new webpack.DllReferencePlugin({
+                context: __dirname,
+                manifest: require('./build/vendor-manifest.json')
+            }),
+
+            new AddAssetHtmlPlugin({
+                filename: require.resolve('./build/vendor.dll.js'),
+                includeSourcemap: false
+            })
         ],
         cache: true
     });
