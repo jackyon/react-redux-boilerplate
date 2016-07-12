@@ -1,4 +1,5 @@
 build/
 dist/
 webpack.config.js
+webpack.dll.config.js
 node_modules/

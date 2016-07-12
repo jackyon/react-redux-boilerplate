@@ -1,5 +1,5 @@
-var path = require('path');
-var webpack = require('webpack');
+var path = require( 'path' );
+var webpack = require( 'webpack' );
 
 module.exports = {
     entry: {
@@ -18,17 +18,17 @@ module.exports = {
         ]
     },
     output:  {
-        path: path.join(__dirname, 'build/'),
+        path: path.join( __dirname, 'build/' ),
         filename: '[name].dll.js',
         library: '[name]_library'
     },
     progress: true,
     plugins: [
-        new webpack.DllPlugin({
-            path: path.join(__dirname, 'build', '[name]-manifest.json'),
+        new webpack.DllPlugin( {
+            path: path.join( __dirname, 'build', '[name]-manifest.json' ),
             name: '[name]_library'
-        }),
-        new webpack.optimize.UglifyJsPlugin({
+        } ),
+        new webpack.optimize.UglifyJsPlugin( {
             minimize: true,
             output: {
                 comments: false
@@ -37,14 +37,14 @@ module.exports = {
                 warnings: false,
                 screw_ie8: true
             }
-        }),
+        } ),
         new webpack.NoErrorsPlugin(),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.DedupePlugin(),
-        new webpack.DefinePlugin({
-            'process.env': {NODE_ENV: '"production"'},
+        new webpack.DefinePlugin( {
+            'process.env': { NODE_ENV: '"production"' },
             '__DEV__': false,
             '__PRODUCTION__': true
-        })
+        } )
     ]
-}
+};

@@ -35,7 +35,10 @@ $ npm install
 ```
 
 <h2>Usage</h2>
-
+For dll usage, you have to run this first:
+```
+$ npm run build:dll
+```
 Dev:
 ```
 $ npm run dev
