@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "common": "rm -rf build build/*; mkdir build;",
-    "browsersync": "npm run common; webpack --watch",
-    "deploy": "rm -rf dist/*; cp -R app/public/* dist/; webpack",
-    "dev": "npm run common; cp -R app/public/* build/; webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js; ",
-    "dev-quiet": "npm run dev | grep -v '[[0-9]]'",
-    "tinypng": "tinypng -r dist/",
-    "lint": "eslint --fix --format 'node_modules/eslint-friendly-formatter' . --ext .js --ext .jsx || true",
-    "stats": "webpack --profile --json > stats.json"
+    "clean:build": "rimraf build && mkdir build;",
+    "clean:dist": "rimraf dist && mkdir dist;",
+    "common": "npm run clean:build;",
+
+    "browsersync": "npm run common && webpack --watch;",
+    "dev": "npm run common && cp -R app/public/* build/ && webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js;",
+    "dev-quiet": "npm run dev | grep -v '[[0-9]]';",
+    "deploy": "npm run clean:dist && cp -R app/public/* dist/ && webpack;",
+    "tinypng": "tinypng -r dist/;",
+    "lint": "eslint --fix --format 'node_modules/eslint-friendly-formatter' . --ext .js --ext .jsx || true;",
+    "stats": "webpack --profile --json > stats.json;"
   },
   "author": "",
   "license": "ISC",
@@ -44,6 +47,7 @@
     "postcss-loader": "^0.8.2",
     "precss": "^1.4.0",
     "react-hot-loader": "^1.3.0",
+    "rimraf": "^2.5.3",
     "sass-loader": "^3.1.0",
     "style-loader": "^0.12.4",
     "url-loader": "^0.5.6",
