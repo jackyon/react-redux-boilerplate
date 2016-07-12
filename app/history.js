@@ -13,15 +13,15 @@ if ( __DEV__ ) {
         queryKey: true
     } );
 
-    history = syncHistoryWithStore( useRouterHistory(createHashHistory) (), store );
+    history = syncHistoryWithStore( useRouterHistory( createHashHistory ) (), store );
 }
 
 if ( __PRODUCTION__ ) {
     createBrowserHistory = require( 'history/lib/createBrowserHistory' );
-    history = syncHistoryWithStore( useRouterHistory(createBrowserHistory) (), store );
+    history = syncHistoryWithStore( useRouterHistory( createBrowserHistory ) (), store );
 }
 
 export default {
     history,
     store
-}
+};
