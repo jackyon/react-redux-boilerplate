@@ -61,6 +61,10 @@ Deploy:
 $ npm run deploy
 ```
 
+For windows user:
+download git windows for running the commonds: https://git-scm.com/download
+
+
 Image compress:<br>
 <h5>PNG:</h5>
 ```
@@ -179,3 +183,6 @@ export default function configureStore(initialState) {
     return store
 }
 ```
+
+<h3>Webpack Dll plugin</h3>
+<p>Optimizing Webpack for Faster React Builds, you can see the useage of the branch "dll" version.</p>
