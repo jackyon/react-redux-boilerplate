@@ -306,7 +306,7 @@ var deployCommon = merge(common, {
 if (TARGET === 'deploy') {
 	module.exports = merge(deployCommon, {
         plugins: [
-            new WebpackShellPlugin({onBuildEnd:['static dist/ -a ' + ipAddress + ';']}),
+            new WebpackShellPlugin({onBuildEnd:['static dist/ -a ' + ipAddress]}),
             new WebpackBrowserPlugin({
                 url: 'http://' + ipAddress
             })
