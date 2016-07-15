@@ -10,7 +10,7 @@
     "tinypng": "tinypng -r dist/",
     "build:dll": "webpack --config webpack.dll.config.js",
     "browsersyncDevCommon": "mv build/vendor-manifest.json build/vendor.dll.js ./ && npm run common && mv vendor-manifest.json vendor.dll.js build/ && cp -R app/public/* build/",
-    "browsersync": "npm run browsersyncDevCommon webpack --watch",
+    "browsersync": "npm run browsersyncDevCommon && webpack --watch",
     "dev": "npm run browsersyncDevCommon && webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js",
     "dev-quiet": "npm run dev | grep -v '[[0-9]]'",
     "deploy": "cp -R app/public/* dist/ && webpack",
