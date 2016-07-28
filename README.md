@@ -54,7 +54,7 @@ $ npm run lint
 ```
 stats:
 ```
-$ npm run stats (after executed, upload 'stats.json' file to http://webpack.github.io/analyse/)
+$ npm run stats (after executed, upload 'stats.json' file to http://webpack.github.io/analyse/ or https://chrisbateman.github.io/webpack-visualizer/ or https://alexkuz.github.io/webpack-chart/)
 ```
 Deploy:
 ```
