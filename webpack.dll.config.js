@@ -42,9 +42,11 @@ module.exports = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.optimize.DedupePlugin(),
         new webpack.DefinePlugin( {
-            'process.env': { NODE_ENV: '"production"' },
-            '__DEV__': false,
-            '__PRODUCTION__': true
+            'process.env': {
+                'NODE_ENV': JSON.stringify('development'),
+            },
+            '__DEV__': true,
+            '__PRODUCTION__': false
         } )
     ]
 };
