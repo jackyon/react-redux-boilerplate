@@ -1,6 +1,18 @@
 <h1>react-redux-boilerplate</h1>
 > Containing modern web development tools such as Webpack, React Hot Loader, React Router, Dynamic routing, Redux, Redux simple router, esLint, Babel6, sass, less, postcss, BrowserSync, Tinypng, HappyPack, etc...
 
+<h2>Notice</h2>
+If you got <b>Cannot resolve module 'react/lib/ReactMount'</b> error, plz run:
+```
+cnpm i react@15.3.0 react-dom@15.3.0 --save
+```
+more details: 
+- http://stackoverflow.com/questions/40652327/module-not-found-error-cannot-resolve-module-react-lib-reactmount
+- https://github.com/gaearon/react-hot-loader/issues/417
+
+I sugguest that you can wait until official have the soluction for this issue.
+
+
 Directory Layout:
 ```
 ├── /app/                       # The source code of the application

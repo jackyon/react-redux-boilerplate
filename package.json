@@ -7,7 +7,6 @@
     "clean:build": "rimraf build && mkdir build",
     "clean:dist": "rimraf dist && mkdir dist",
     "common": "npm run clean:build",
-
     "browsersync": "npm run common && webpack --watch",
     "dev": "npm run common && cp -R app/public/* build/ && webpack-dev-server --host 0.0.0.0 --devtool eval --progress --colors --inline --hot --content-base build --congfig webpack.config.js",
     "dev-quiet": "npm run dev | grep -v '[[0-9]]'",
@@ -60,9 +59,9 @@
   "dependencies": {
     "history": "^1.17.0",
     "normalize.css": "^3.0.3",
-    "react": "^15.0.2",
+    "react": "^15.3.0",
     "react-document-meta": "^2.0.0-rc2",
-    "react-dom": "^15.0.2",
+    "react-dom": "^15.3.0",
     "react-redux": "^4.0.0",
     "react-router": "^2.4.0",
     "react-router-redux": "^4.0.0",
