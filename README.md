@@ -190,7 +190,7 @@ export default function configureStore(initialState) {
 <h2>Notice</h2>
 If you got <b>Cannot resolve module 'react/lib/ReactMount'</b> error, plz run:
 ```
-cnpm i react@15.3.0 react-dom@15.3.0 --save
+npm i react@15.3.0 react-dom@15.3.0 --save
 ```
 more details: 
 - http://stackoverflow.com/questions/40652327/module-not-found-error-cannot-resolve-module-react-lib-reactmount
