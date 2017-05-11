@@ -83,7 +83,7 @@ $ npm run tinypng
 
 <h5>JPEG:</h5>
 ```
-fot now, I'm still using jpegmini, this is the best tools to compress the jpeg images that I discovered so far.
+for now, I'm still using jpegmini, this is the best tools to compress the jpeg images that I discovered so far.
 even though the jpegmini app is so simple to use it(just simple drag&drop), but I will consider to integrate this super tool into webpack. Still researching...
 ```
 
